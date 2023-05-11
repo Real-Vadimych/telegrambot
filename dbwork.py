@@ -2,7 +2,6 @@ from sqlalchemy import create_engine, text
 from settings import DB_NAME, DB_PASSWORD, DB_SERVER_NAME, DB_USER
 
 def inserttodb(message, person_name):
-
 	db = create_engine(f'postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_SERVER_NAME}/{DB_NAME}')
 	with db.connect() as connection:
 		with connection.begin():
